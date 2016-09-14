@@ -25,6 +25,24 @@ namespace Trajectories
             }
             return null;
         }
+        public static Orbit getSpaceOrbit()
+        {
+            foreach (var patch in Trajectory.fetch.patches)
+            {
+                if (patch.spaceOrbit != null)
+                    return patch.spaceOrbit;
+            }
+            return null;	
+	}
+        public static Vector3 getImpactVelocity()
+        {
+            foreach (var patch in Trajectory.fetch.patches)
+            {
+                if (patch.impactVelocity != null)
+                    return patch.impactVelocity;
+            }
+            return null;
+        }		
         public static Vector3 plannedDirection()
         {
             return AutoPilot.fetch.PlannedDirection;
